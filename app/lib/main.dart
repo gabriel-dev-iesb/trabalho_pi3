@@ -8,3 +8,4 @@ void main() {
     ModularApp(module: AppModule(), child: const AppWidget()),
   );
 }
+
