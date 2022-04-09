@@ -62,7 +62,6 @@ class LoginPage extends StatelessWidget {
               ),
               child: const Text('ENTRAR'),
               onPressed: () {
-                Modular.to.pushNamed('/pagina');
                 // ignore: avoid_print
                 print('Pressed');
               },
@@ -71,16 +70,20 @@ class LoginPage extends StatelessWidget {
           Container(
             margin: const EdgeInsets.only(bottom: 15),
             padding: const EdgeInsets.only(top: 20),
-            child: RichText(
-              textAlign: TextAlign.center,
-              text: TextSpan(
-                text: "ESQUECI A SENHA",
-                style: TextStyle(
-                  fontSize: 13,
-                  color: Colors.grey[700],
+            child: GestureDetector(
+                child: RichText(
+                  textAlign: TextAlign.center,
+                  text: TextSpan(
+                    text: "ESQUECI A SENHA",
+                    style: TextStyle(
+                      fontSize: 13,
+                      color: Colors.grey[700],
+                    ),
+                  ),
                 ),
-              ),
-            ),
+                onTap: () {
+                  Modular.to.pushNamed('/auth/reset-password');
+                }),
           ),
           _footer(),
           Container(
@@ -98,7 +101,8 @@ class LoginPage extends StatelessWidget {
               child: const Text('CRIAR CONTA'),
               onPressed: () {
                 // ignore: avoid_print
-                print('Pressed');
+                Modular.to.pushNamed('/auth/signup');
+                // print('Pressed');
               },
             ),
           ),

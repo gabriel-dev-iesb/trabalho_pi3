@@ -1,4 +1,4 @@
-import 'package:aider/src/features/onboarding/presentation/view/onboarding_view.dart';
+import 'package:aider/src/features/onboarding/presentation/view/page/onboarding_page.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class OnboardingModule extends Module {

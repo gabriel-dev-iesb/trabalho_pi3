@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:localization/localization.dart';
 
 Widget buildPage(
         {bool isLastPage = false,
@@ -38,13 +40,15 @@ Widget buildPage(
           SizedBox(
               width: double.infinity,
               child: isLastPage
-                  ? const ElevatedButton(
+                  ? ElevatedButton(
                       onPressed: onPressed,
-                      child: Text('Entrar'),
+                      child: Text('page3-onboarding-button'.i18n()),
                     )
                   : null)
         ],
       ),
     );
 
-void onPressed() {}
+void onPressed() {
+  Modular.to.pushNamed('/auth/login');
+}
