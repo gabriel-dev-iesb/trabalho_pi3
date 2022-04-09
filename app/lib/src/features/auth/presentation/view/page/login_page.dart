@@ -56,7 +56,7 @@ class LoginPage extends StatelessWidget {
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 textStyle: const TextStyle(
-                  fontSize: 18,
+                  fontSize: 15,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -92,7 +92,7 @@ class LoginPage extends StatelessWidget {
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 textStyle: const TextStyle(
-                  fontSize: 18,
+                  fontSize: 15,
                   fontWeight: FontWeight.bold,
                 ),
               ),
