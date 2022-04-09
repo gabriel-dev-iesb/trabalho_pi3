@@ -1,9 +1,9 @@
 {
-    "page1_onboarding_title" : "Criando um mundo melhorrrr",
-    "page1_onboarding_subtitle" : "Com a aider, você pode mudar a vida das pessoas. Nós estamos aqui para te ajudar a encontrá-las",
-    "page2_onboarding_title" : "O poder está em suas mãos",
-    "page2_onboarding_subtitle" : "Conecte-se com organizações que, assim como você, querem ajudar a construir um mundo melhor",
-    "page3_onboarding_title" : "Faça a diferença",
-    "page3_onboarding_subtitle" : "Crie sua conta agora, e veja um universo de possibilidades onde sua ajuda faz a diferença.Vamos lá?",
-    "page3_onboarding_button": "Entrar"
+    "page1-onboarding-title" : "Criando um mundo melhor",
+    "page1-onboarding-subtitle" : "Com a aider, você pode mudar a vida das pessoas. Nós estamos aqui para te ajudar a encontrá-las",
+    "page2-onboarding-title" : "O poder está em suas mãos",
+    "page2-onboarding-subtitle" : "Conecte-se com organizações que, assim como você, querem ajudar a construir um mundo melhor",
+    "page3-onboarding-title" : "Faça a diferença",
+    "page3-onboarding-subtitle" : "Crie sua conta agora, e veja um universo de possibilidades onde sua ajuda faz a diferença.Vamos lá?",
+    "page3-onboarding-button": "Entrar"
 }

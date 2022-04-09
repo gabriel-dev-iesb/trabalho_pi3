@@ -33,19 +33,19 @@ class _OnboardingPageState extends State<OnboardingPage> {
           buildPage(
               color: Colors.white,
               urlImage: 'lib/assets/images/onboarding_1.png',
-              title: 'page1_onboarding_title'.i18n(),
-              subtitle: 'page1_onboarding_subtitle'.i18n()),
+              title: 'page1-onboarding-title'.i18n(),
+              subtitle: 'page1-onboarding-subtitle'.i18n()),
           buildPage(
               color: Colors.white,
               urlImage: 'lib/assets/images/onboarding_2.png',
-              title: 'page2_onboarding_title'.i18n(),
-              subtitle: 'page2_onboarding_subtitle'.i18n()),
+              title: 'page2-onboarding-title'.i18n(),
+              subtitle: 'page2-onboarding-subtitle'.i18n()),
           buildPage(
               isLastPage: isLastPage,
               color: Colors.white,
               urlImage: 'lib/assets/images/onboarding_3.png',
-              title: 'page3_onboarding_title'.i18n(),
-              subtitle: 'page3_onboarding_subtitle'.i18n()),
+              title: 'page3-onboarding-title'.i18n(),
+              subtitle: 'page3-onboarding-subtitle'.i18n()),
         ],
       ),
       bottomSheet: Container(

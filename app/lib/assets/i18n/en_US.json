@@ -1,9 +1,9 @@
 {
-    "page1_onboarding_title" : "Creating a better world",
-    "page1_onboarding_subtitle" : "With aider, you can change people's lives. We are here to help you find them.",
-    "page2_onboarding_title" : "The power is in your hands",
-    "page2_onboarding_subtitle" : "Connect with organizations that, like you, want to help build a better world",
-    "page3_onboarding_title" : "Make the difference",
-    "page3_onboarding_subtitle" : "Create your account now, and see a universe of possibilities where your help makes a difference. Let's go?",
-    "page3_onboarding_button": "Sign in"
+    "page1-onboarding-title" : "Creating a better world",
+    "page1-onboarding-subtitle" : "With aider, you can change people's lives. We are here to help you find them.",
+    "page2-onboarding-title" : "The power is in your hands",
+    "page2-onboarding-subtitle" : "Connect with organizations that, like you, want to help build a better world",
+    "page3-onboarding-title" : "Make the difference",
+    "page3-onboarding-subtitle" : "Create your account now, and see a universe of possibilities where your help makes a difference. Let's go?",
+    "page3-onboarding-button": "Sign in"
 }
