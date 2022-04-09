@@ -7,12 +7,12 @@ class AppStyle {
     return InputDecoration(
       labelText: labelText,
       filled: true,
-      fillColor: Colors.white,
+      fillColor: Colors.grey[200],
       hintText: hintText,
       hintStyle: TextStyle(color: Colors.grey[400], fontSize: 16),
-      border: const OutlineInputBorder(),
+      enabledBorder: InputBorder.none,
       focusedBorder: const OutlineInputBorder(
-        borderSide: BorderSide(color: Colors.grey),
+        borderSide: BorderSide(color: Color.fromARGB(255, 216, 216, 216)),
       ),
     );
   }
