@@ -15,7 +15,7 @@ class LoginPage extends StatelessWidget {
       body: _containerBody(),
       appBar: AppBar(
         title: const Text("Login", style: TextStyle(fontSize: 20)),
-        backgroundColor: const Color(0xFF0CCE6B),
+        backgroundColor: Colors.green,
       ),
     );
   }
@@ -54,9 +54,9 @@ class LoginPage extends StatelessWidget {
             padding: const EdgeInsets.only(left: 110, right: 110),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                primary: const Color(0xFF0CCE6B),
+                primary: Colors.green,
                 textStyle: const TextStyle(
-                  fontSize: 18,
+                  fontSize: 15,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -73,11 +73,14 @@ class LoginPage extends StatelessWidget {
             child: GestureDetector(
                 child: RichText(
                   textAlign: TextAlign.center,
-                  text: TextSpan(
+                  text: const TextSpan(
                     text: "ESQUECI A SENHA",
                     style: TextStyle(
                       fontSize: 13,
-                      color: Colors.grey[700],
+                      color: Colors.green,
+                      decoration: TextDecoration.underline,
+                      decorationStyle: TextDecorationStyle.wavy,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
@@ -92,9 +95,9 @@ class LoginPage extends StatelessWidget {
             padding: const EdgeInsets.only(left: 110, right: 110),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                primary: const Color(0xFF0CCE6B),
+                primary: Colors.green,
                 textStyle: const TextStyle(
-                  fontSize: 18,
+                  fontSize: 15,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -123,7 +126,7 @@ class LoginPage extends StatelessWidget {
             ),
           ),
         ),
-        const Text("OU", style: TextStyle(color: Color(0xFF0CCE6B))),
+        const Text("OU", style: TextStyle(color: Colors.green)),
         Expanded(
           child: Container(
             margin: const EdgeInsets.only(left: 10),
