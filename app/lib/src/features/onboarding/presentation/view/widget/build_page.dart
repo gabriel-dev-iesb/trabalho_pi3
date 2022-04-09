@@ -1,16 +1,17 @@
+import 'package:aider/src/features/onboarding/presentation/view/widget/add_spacing.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:localization/localization.dart';
 
 Widget buildPage(
         {bool isLastPage = false,
-        required Color color,
+        // Color color,
         required String urlImage,
         required String title,
         required String subtitle}) =>
     Container(
       padding: const EdgeInsets.symmetric(horizontal: 48),
-      color: color,
+      // color: color,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -19,7 +20,7 @@ Widget buildPage(
             fit: BoxFit.contain,
             width: 220,
           ),
-          const SizedBox(height: 48),
+          spacing(48),
           Text(
             title,
             textAlign: TextAlign.center,
@@ -28,7 +29,7 @@ Widget buildPage(
                 fontSize: 32,
                 fontWeight: FontWeight.bold),
           ),
-          const SizedBox(height: 32),
+          spacing(32),
           Text(
             subtitle,
             textAlign: TextAlign.center,
@@ -36,7 +37,7 @@ Widget buildPage(
               color: Colors.grey.shade700,
             ),
           ),
-          const SizedBox(height: 32),
+          spacing(32),
           SizedBox(
               width: double.infinity,
               child: isLastPage

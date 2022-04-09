@@ -1,7 +1,9 @@
+import 'package:aider/theme/theme_variants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:localization/localization.dart';
+
 
 class AppWidget extends StatelessWidget {
   const AppWidget({Key? key}) : super(key: key);
@@ -11,9 +13,7 @@ class AppWidget extends StatelessWidget {
     LocalJsonLocalization.delegate.directories = ['lib/assets/i18n'];
 
     return MaterialApp.router(
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-      ),
+      theme: basicTheme(),
       // scrollBehavior: AppScrollBehavior(),
       title: 'aider',
       localizationsDelegates: [

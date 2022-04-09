@@ -1,3 +1,4 @@
+import 'package:aider/src/features/onboarding/presentation/view/widget/add_spacing.dart';
 import 'package:flutter/material.dart';
 import 'package:aider/decoration/app_style.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -11,12 +12,12 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: _containerBody(),
       appBar: AppBar(
         title: const Text("Login", style: TextStyle(fontSize: 20)),
-        backgroundColor: Colors.green,
       ),
+      drawer: const Drawer(),
+      
     );
   }
 
@@ -54,7 +55,6 @@ class LoginPage extends StatelessWidget {
             padding: const EdgeInsets.only(left: 110, right: 110),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                primary: Colors.green,
                 textStyle: const TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.bold,
@@ -77,10 +77,6 @@ class LoginPage extends StatelessWidget {
                     text: "ESQUECI A SENHA",
                     style: TextStyle(
                       fontSize: 13,
-                      color: Colors.green,
-                      decoration: TextDecoration.underline,
-                      decorationStyle: TextDecorationStyle.wavy,
-                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
@@ -95,7 +91,6 @@ class LoginPage extends StatelessWidget {
             padding: const EdgeInsets.only(left: 110, right: 110),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                primary: Colors.green,
                 textStyle: const TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.bold,
@@ -120,18 +115,19 @@ class LoginPage extends StatelessWidget {
         Expanded(
           child: Container(
             margin: const EdgeInsets.only(right: 10),
-            child: Divider(
-              color: Colors.grey[600],
+            child: const Divider(
+              // color: Colors.grey[600],
               height: 26,
             ),
           ),
         ),
-        const Text("OU", style: TextStyle(color: Colors.green)),
+        spacing(48),
+        const Text("OU", style: TextStyle(color: Color(0xFF0CCE6B))),
         Expanded(
           child: Container(
             margin: const EdgeInsets.only(left: 10),
-            child: Divider(
-              color: Colors.grey[600],
+            child: const Divider(
+              // color: Colors.grey[600],
               height: 26,
             ),
           ),
