@@ -6,13 +6,17 @@ class AppStyle {
 
     return InputDecoration(
       labelText: labelText,
+      focusColor: const Color(0xFF0CCE6B),
       filled: true,
-      fillColor: Colors.grey[200],
+      fillColor: Colors.white,
       hintText: hintText,
+      floatingLabelStyle: const TextStyle(color: Color(0xFF0CCE6B)),
       hintStyle: TextStyle(color: Colors.grey[400], fontSize: 16),
-      enabledBorder: InputBorder.none,
+      enabledBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: Colors.grey.shade300),
+      ),
       focusedBorder: const OutlineInputBorder(
-        borderSide: BorderSide(color: Color.fromARGB(255, 216, 216, 216)),
+        borderSide: BorderSide(color: Color(0xFF0CCE6B)),
       ),
     );
   }

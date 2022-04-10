@@ -1,7 +1,9 @@
 import 'package:aider/src/features/onboarding/presentation/view/widget/add_spacing.dart';
 import 'package:flutter/material.dart';
 import 'package:aider/decoration/app_style.dart';
+import 'package:localization/localization.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:localization/localization.dart';
 
 class LoginPage extends StatelessWidget {
   final TextEditingController _emailController = TextEditingController();
@@ -14,9 +16,8 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       body: _containerBody(),
       appBar: AppBar(
-        title: const Text("Login", style: TextStyle(fontSize: 20)),
+        title: Text("title-login".i18n(), style: const TextStyle(fontSize: 20)),
       ),
-      drawer: const Drawer(),
       
     );
   }
@@ -37,7 +38,7 @@ class LoginPage extends StatelessWidget {
                 fontSize: 18,
               ),
               decoration: AppStyle.textFieldDecoration(
-                  labelText: "E-mail", hintText: "Digite seu email")),
+                  labelText: "email-placeholder-login".i18n())),
           Container(
             margin: const EdgeInsets.only(top: 40),
             child: TextFormField(
@@ -47,7 +48,7 @@ class LoginPage extends StatelessWidget {
                   fontSize: 18,
                 ),
                 decoration: AppStyle.textFieldDecoration(
-                    labelText: "Senha", hintText: "Digite sua senha")),
+                    labelText: "password-placeholder-login".i18n())),
           ),
           Container(
             margin: const EdgeInsets.only(top: 35),
@@ -60,7 +61,7 @@ class LoginPage extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              child: const Text('ENTRAR'),
+              child: Text('sign-in-login'.i18n()),
               onPressed: () {
                 // ignore: avoid_print
                 print('Pressed');
@@ -73,10 +74,12 @@ class LoginPage extends StatelessWidget {
             child: GestureDetector(
                 child: RichText(
                   textAlign: TextAlign.center,
-                  text: const TextSpan(
-                    text: "ESQUECI A SENHA",
-                    style: TextStyle(
+                  text: TextSpan(
+                    text: "reset-password-login".i18n(),
+                    style: const TextStyle(
                       fontSize: 13,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
@@ -96,7 +99,7 @@ class LoginPage extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              child: const Text('CRIAR CONTA'),
+              child: Text('sign-up-login'.i18n()),
               onPressed: () {
                 // ignore: avoid_print
                 Modular.to.pushNamed('/auth/signup');
@@ -116,18 +119,16 @@ class LoginPage extends StatelessWidget {
           child: Container(
             margin: const EdgeInsets.only(right: 10),
             child: const Divider(
-              // color: Colors.grey[600],
               height: 26,
             ),
           ),
         ),
         spacing(48),
-        const Text("OU", style: TextStyle(color: Color(0xFF0CCE6B))),
+        Text("divider-text-login".i18n(), style: const TextStyle(color: Color(0xFF0CCE6B))),
         Expanded(
           child: Container(
             margin: const EdgeInsets.only(left: 10),
             child: const Divider(
-              // color: Colors.grey[600],
               height: 26,
             ),
           ),
