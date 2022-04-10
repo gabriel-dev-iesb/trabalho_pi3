@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:aider/decoration/app_style.dart';
 import 'package:localization/localization.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:localization/localization.dart';
 
 class LoginPage extends StatelessWidget {
   final TextEditingController _emailController = TextEditingController();
@@ -77,6 +78,8 @@ class LoginPage extends StatelessWidget {
                     text: "reset-password-login".i18n(),
                     style: const TextStyle(
                       fontSize: 13,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
