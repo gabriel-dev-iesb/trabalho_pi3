@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:aider/decoration/app_style.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:localization/localization.dart';
 
 class RegisterPage extends StatelessWidget {
   final TextEditingController _emailController = TextEditingController();
@@ -17,7 +18,7 @@ class RegisterPage extends StatelessWidget {
       backgroundColor: Colors.white,
       body: _containerBody(),
       appBar: AppBar(
-        title: const Text("Cadastrar", style: TextStyle(fontSize: 20)),
+        title: Text('signinup-page-label-appbar-tittle'.i18n(), style:const TextStyle(fontSize: 20)),
         backgroundColor: Colors.green,
       ),
     );
@@ -39,7 +40,7 @@ class RegisterPage extends StatelessWidget {
                 fontSize: 18,
               ),
               decoration: AppStyle.textFieldDecoration(
-                  labelText: "Nome Completo", hintText: "Nome Completo")),
+                  labelText: 'signinup-page-label-name'.i18n(), hintText: 'signinup-page-label-name'.i18n())),
           Container(
             margin: const EdgeInsets.only(top: 10),
             child: TextFormField(
@@ -49,7 +50,7 @@ class RegisterPage extends StatelessWidget {
                   fontSize: 18,
                 ),
                 decoration: AppStyle.textFieldDecoration(
-                    labelText: "E-mail", hintText: "Digite seu e-mail")),
+                    labelText: 'signinup-page-label-email'.i18n(), hintText: 'signinup-page-label-email'.i18n())),
           ),
           Container(
             margin: const EdgeInsets.only(top: 10),
@@ -60,7 +61,7 @@ class RegisterPage extends StatelessWidget {
                   fontSize: 18,
                 ),
                 decoration: AppStyle.textFieldDecoration(
-                    labelText: "Confirme seu e-mail", hintText: "Confirme seu e-mail")),
+                    labelText: 'signinup-page-label-email-confirm'.i18n(), hintText: 'signinup-page-label-email-confirm'.i18n())),
           ),
           Container(
             margin: const EdgeInsets.only(top: 10),
@@ -71,7 +72,7 @@ class RegisterPage extends StatelessWidget {
                   fontSize: 18,
                 ),
                 decoration: AppStyle.textFieldDecoration(
-                    labelText: "Senha", hintText: "Digite sua senha")),
+                    labelText: 'signinup-page-label-password'.i18n(), hintText: 'signinup-page-label-password'.i18n())),
           ),
           Container(
             margin: const EdgeInsets.only(top: 10),
@@ -82,7 +83,7 @@ class RegisterPage extends StatelessWidget {
                   fontSize: 18,
                 ),
                 decoration: AppStyle.textFieldDecoration(
-                    labelText: "Confirme sua senha", hintText: "Confirme sua senha")),
+                    labelText: 'signinup-page-label-password-confirm'.i18n(), hintText: 'signinup-page-label-password-confirm'.i18n())),
           ),
           Container(
             margin: const EdgeInsets.only(top: 35),
@@ -96,7 +97,7 @@ class RegisterPage extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              child: const Text('CRIAR CONTA'),
+              child: Text('signinup-page-label-sign'.i18n()),
               onPressed: () {
                 // ignore: avoid_print
                 print('Pressed');
@@ -105,12 +106,11 @@ class RegisterPage extends StatelessWidget {
           ),
           Container(
             margin: const EdgeInsets.only(top: 50),
-            child: const Text(
-              "JÁ TEM UMA CONTA?",
-              style: TextStyle(
+            child: Text(
+              'signinup-page-label-have-a-acount'.i18n(),
+              style: const TextStyle(
                 fontSize: 15,
                 color: Colors.black,
-                decorationStyle: TextDecorationStyle.wavy,
                 fontWeight: FontWeight.bold,
 
               ),
@@ -123,9 +123,9 @@ class RegisterPage extends StatelessWidget {
             child: GestureDetector(
                 child: RichText(
                   textAlign: TextAlign.center,
-                  text: const TextSpan(
-                    text: "IR PARA LOGIN",
-                    style: TextStyle(
+                  text: TextSpan(
+                    text: 'signinup-page-label-go-to-login'.i18n(),
+                    style: const TextStyle(
                       fontSize: 13,
                       color: Colors.green,
                       decoration: TextDecoration.underline,

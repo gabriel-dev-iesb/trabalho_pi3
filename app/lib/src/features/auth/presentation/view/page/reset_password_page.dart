@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:aider/decoration/app_style.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:localization/localization.dart';
 
 class ResetPasswordPage extends StatelessWidget {
   final TextEditingController _emailResetController = TextEditingController();
@@ -11,7 +12,7 @@ class ResetPasswordPage extends StatelessWidget {
       backgroundColor: Colors.white,
       body: _containerBody(),
       appBar: AppBar(
-        title: const Text("Redefinição de Senha", style: TextStyle(fontSize: 20)),
+        title: Text('reset-page-title'.i18n(), style: const TextStyle(fontSize: 20)),
         backgroundColor: Colors.green,
       ),
     );
@@ -30,7 +31,7 @@ class ResetPasswordPage extends StatelessWidget {
           Container(
             margin: const EdgeInsets.only(bottom: 10),
             child: Text(
-              "Insira o seu e-mail para a redefinição de senha",
+              'reset-page-text-information'.i18n(),
               style: TextStyle(
                 fontSize:17,
                 color: Colors.grey[700],
@@ -45,8 +46,8 @@ class ResetPasswordPage extends StatelessWidget {
                 fontSize: 18,
               ),
               decoration: AppStyle.textFieldDecoration(
-                  labelText: "E-mail",
-                  hintText: "Digite seu email de recuperação")),
+                  labelText: 'reset-page-label-email'.i18n(),
+                  hintText: 'reset-page-label-hintext'.i18n())),
           
           Container(
             margin: const EdgeInsets.only(top: 35),
@@ -60,7 +61,7 @@ class ResetPasswordPage extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              child: const Text('CONTINUAR'),
+              child: Text('reset-page-label-continue'.i18n()),
               onPressed: () {
               },
             ),
@@ -72,9 +73,9 @@ class ResetPasswordPage extends StatelessWidget {
             child: GestureDetector(
                 child: RichText(
                   textAlign: TextAlign.center,
-                  text: const TextSpan(
-                    text: "VOLTAR",
-                    style: TextStyle(
+                  text: TextSpan(
+                    text: 'reset-page-label-back'.i18n(),
+                    style: const TextStyle(
                       fontSize: 13,
                       color: Colors.green,
                       decoration: TextDecoration.underline,
