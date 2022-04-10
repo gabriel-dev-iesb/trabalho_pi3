@@ -31,18 +31,15 @@ class _OnboardingPageState extends State<OnboardingPage> {
         },
         children: [
           buildPage(
-              // color: Colors.white,
               urlImage: 'lib/assets/images/onboarding_1.png',
               title: 'page1-onboarding-title'.i18n(),
               subtitle: 'page1-onboarding-subtitle'.i18n()),
           buildPage(
-              // color: Colors.white,
               urlImage: 'lib/assets/images/onboarding_2.png',
               title: 'page2-onboarding-title'.i18n(),
               subtitle: 'page2-onboarding-subtitle'.i18n()),
           buildPage(
               isLastPage: isLastPage,
-              // color: Colors.white,
               urlImage: 'lib/assets/images/onboarding_3.png',
               title: 'page3-onboarding-title'.i18n(),
               subtitle: 'page3-onboarding-subtitle'.i18n()),

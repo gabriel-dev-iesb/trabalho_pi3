@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:aider/decoration/app_style.dart';
+import 'package:localization/localization.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class ResetPasswordPage extends StatelessWidget {
   final TextEditingController _emailResetController = TextEditingController();
+
+  ResetPasswordPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,8 +14,7 @@ class ResetPasswordPage extends StatelessWidget {
       backgroundColor: Colors.white,
       body: _containerBody(),
       appBar: AppBar(
-        title: const Text("Redefinição de Senha", style: TextStyle(fontSize: 20)),
-        backgroundColor: Colors.green,
+        title:  Text("title-reset-password".i18n(), style: const TextStyle(fontSize: 20)),
       ),
     );
   }
@@ -30,10 +32,9 @@ class ResetPasswordPage extends StatelessWidget {
           Container(
             margin: const EdgeInsets.only(bottom: 10),
             child: Text(
-              "Insira o seu e-mail para a redefinição de senha",
-              style: TextStyle(
+              "label-reset-password".i18n(),
+              style: const TextStyle(
                 fontSize:17,
-                color: Colors.grey[700],
               ),
               textAlign: TextAlign.center,
             ),
@@ -45,8 +46,8 @@ class ResetPasswordPage extends StatelessWidget {
                 fontSize: 18,
               ),
               decoration: AppStyle.textFieldDecoration(
-                  labelText: "E-mail",
-                  hintText: "Digite seu email de recuperação")),
+                  labelText: "email-placholder-reset-password".i18n(),
+                  )),
           
           Container(
             margin: const EdgeInsets.only(top: 35),
@@ -54,13 +55,12 @@ class ResetPasswordPage extends StatelessWidget {
             padding: const EdgeInsets.only(left: 110, right: 110),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                primary: Colors.green,
                 textStyle: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              child: const Text('CONTINUAR'),
+              child:  Text('send-reset-password'.i18n()),
               onPressed: () {
               },
             ),
@@ -72,11 +72,11 @@ class ResetPasswordPage extends StatelessWidget {
             child: GestureDetector(
                 child: RichText(
                   textAlign: TextAlign.center,
-                  text: const TextSpan(
-                    text: "VOLTAR",
-                    style: TextStyle(
+                  text: TextSpan(
+                    text: "return-reset-password".i18n(),
+                    style: const TextStyle(
                       fontSize: 13,
-                      color: Colors.green,
+                      color: Color(0xFF0CCE6B),
                       decoration: TextDecoration.underline,
                       decorationStyle: TextDecorationStyle.wavy,
                       fontWeight: FontWeight.bold,
