@@ -1,7 +1,12 @@
+import 'package:aider/src/utils/generate_form_item.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:localization/localization.dart';
 
-import '../widgets/login_form.dart';
+import '../../viewmodel/login_viewmodel.dart';
+
+
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -10,19 +15,14 @@ class LoginPage extends StatefulWidget {
   State<LoginPage> createState() => _LoginPageState();
 }
 
-//TODO: Mudar para ModularState
-class _LoginPageState extends State<LoginPage> {
-  // late ColorScheme _colors;
-  // late ThemeData _theme;
-
-  Widget get isLoadingScreen => const Visibility(
-        child: Center(
+class _LoginPageState extends ModularState<LoginPage, LoginViewModel> {
+  Widget get isLoadingScreen => Visibility(
+        child: const Center(
           child: CircularProgressIndicator(
             backgroundColor: Colors.green,
           ),
         ),
-        // TODO: Fazer o toggle de visibilidade caso esteja carregando o app
-        visible: false,
+        visible: store.isLoading,
       );
 
   Widget get signUpFormButton => Container(
@@ -41,34 +41,97 @@ class _LoginPageState extends State<LoginPage> {
         ),
       );
 
+      bool _obscureText = true;
+
+  void _toggle() {
+    setState(() {
+      _obscureText = !_obscureText;
+    });
+  }
+
+  Widget get emailInput => widget.generateFormField(
+        theme: ThemeData(),
+        keyboardType: TextInputType.emailAddress,
+        textInputAction: TextInputAction.next,
+        hint: 'Seu e-mail',
+        enabled: !store.isLoading,
+        errorText: store.error.email,
+        onChange: (value) => store.email = value,
+      );
+
+  Widget get passwordInput => widget.generateFormField(
+        theme: ThemeData(),
+        keyboardType: TextInputType.visiblePassword,
+        textInputAction: TextInputAction.next,
+        hint: 'Sua senha',
+        obscureText: _obscureText,
+        endIcon: _obscureText ? Icons.visibility : Icons.visibility_off,
+        onPressedIcon: _toggle,
+        enabled: !store.isLoading,
+        errorText: store.error.password,
+        onChange: (value) => store.password = value,
+      );
+
+  Widget get forgetPasswordWidget => Container(
+        alignment: Alignment.centerRight,
+        margin: const EdgeInsets.only(right: 16),
+        child: TextButton(
+            child: const Text('Esqueci minha senha',
+                style: TextStyle(
+                  color: Colors.green,
+                  decoration: TextDecoration.underline,
+                )),
+            onPressed: () {
+              Modular.to.pushNamed('/auth/reset-password');
+            }),
+      );
+
+  Widget get loginButton => Container(
+        margin: const EdgeInsets.fromLTRB(30, 15, 30, 5),
+        width: double.infinity,
+        height: 56,
+        child: ElevatedButton(
+          style: ButtonStyle(
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(6),
+              ),
+            ),
+          ),
+          onPressed: store.isLoading ? null : store.login,
+          //FIXME: Adicionar texto do i18n
+          child: const Text('Fazer Login'),
+        ),
+      );
+
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+     return Scaffold(
+      appBar: AppBar(title: const Text('Login')),
       body: Center(
-        child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-             isLoadingScreen,
-             const Text('aider',
-                  style: TextStyle(fontSize: 48, color: Colors.green)),
-              const LoginWidget(),
-              Container(
-                margin: const EdgeInsets.only(top: 24, bottom: 24),
-                child: const Divider()
-              ),
-              Column(
+        child: SingleChildScrollView(
+          child: Observer(builder: (_) {
+            return Form(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.max,
                 children: [
-                  const Padding(
-                    padding: EdgeInsets.only(top: 8, bottom: 8),
-                    child: Text('Ainda não é um aider?')
-                    ),
-                  signUpFormButton,
-                ]
-              )
-            ],
-        )
-      )
+                  isLoadingScreen,
+                  const SizedBox(height: 5),
+                  emailInput,
+                  passwordInput,
+                  loginButton,
+                  forgetPasswordWidget,
+                  // _divider,
+                  signUpFormButton
+                ],
+              ),
+            );
+          }),
+        ),
+      ),
     );
   }
 }
