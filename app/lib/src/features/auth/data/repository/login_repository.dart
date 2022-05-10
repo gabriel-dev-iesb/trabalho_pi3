@@ -10,9 +10,10 @@ class LoginRepository implements ILogin {
   Future<User> login(User user) async {
     //FIXME: Ajustar endpoint quando arrumar a API
     final dto = UserDto.fromDomain(user);
-    final response = await Dio().get(
-      'https://aider-api.herokuapp.com/aiders',
-      // data: dto.toJson(),
+    print(dto.toJson());
+    final response = await Dio().post(
+      'https://aider-api.herokuapp.com/login',
+      data: dto.toJson(),
     );
     if (response.statusCode == 200) {
       final token = response.headers.value('Authorization');
@@ -20,6 +21,7 @@ class LoginRepository implements ILogin {
       Modular.to.pushNamed('/home/');
       return Future.value(domain);
     } else {
+      //TODO: Retornar erro para o front do formulário
       throw Exception("Usuário ou Senha Inválidos!");
     }
   }
