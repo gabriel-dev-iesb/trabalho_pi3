@@ -6,8 +6,6 @@ import 'package:localization/localization.dart';
 
 import '../../viewmodel/login_viewmodel.dart';
 
-
-
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
@@ -41,7 +39,7 @@ class _LoginPageState extends ModularState<LoginPage, LoginViewModel> {
         ),
       );
 
-      bool _obscureText = true;
+  bool _obscureText = true;
 
   void _toggle() {
     setState(() {
@@ -107,7 +105,7 @@ class _LoginPageState extends ModularState<LoginPage, LoginViewModel> {
 
   @override
   Widget build(BuildContext context) {
-     return Scaffold(
+    return Scaffold(
       appBar: AppBar(title: const Text('Login')),
       body: Center(
         child: SingleChildScrollView(
@@ -135,4 +133,3 @@ class _LoginPageState extends ModularState<LoginPage, LoginViewModel> {
     );
   }
 }
-

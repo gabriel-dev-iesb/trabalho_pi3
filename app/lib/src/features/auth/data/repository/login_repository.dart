@@ -6,23 +6,26 @@ import '../../domain/model/user.dart';
 import '../../domain/repository/login_interface.dart';
 
 class LoginRepository implements ILogin {
+  final Dio _dio = Dio();
+  String url = 'https://aider-api.herokuapp.com';
+
   @override
   Future<User> login(User user) async {
-    //FIXME: Ajustar endpoint quando arrumar a API
     final dto = UserDto.fromDomain(user);
-    print(dto.toJson());
-    final response = await Dio().post(
-      'https://aider-api.herokuapp.com/login',
+
+    final response = await _dio.post(
+      '$url/login',
       data: dto.toJson(),
     );
-    if (response.statusCode == 200) {
-      final token = response.headers.value('Authorization');
-      final domain = User(user.email, null, token: token);
-      Modular.to.pushNamed('/home/');
-      return Future.value(domain);
-    } else {
+
+    if (response.statusCode != 200) {
       //TODO: Retornar erro para o front do formulário
       throw Exception("Usuário ou Senha Inválidos!");
+    } else {
+      final _token = response.headers.value('Authorization');
+      final domain = User(user.email, null, token: _token);
+
+      return Future.value(domain);
     }
   }
 }
