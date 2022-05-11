@@ -1,7 +1,9 @@
+import 'package:aider/src/features/auth/presentation/viewmodel/signup_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
 import 'package:aider/src/utils/generate_form_item.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class SignUpWidget extends StatefulWidget {
   const SignUpWidget({Key? key}) : super(key: key);
@@ -10,7 +12,7 @@ class SignUpWidget extends StatefulWidget {
   State<SignUpWidget> createState() => _SignUpState();
 }
 
-class _SignUpState extends State<SignUpWidget> {
+class _SignUpState extends ModularState<SignUpWidget, SignUpViewModel> {
   bool _obscureText = true;
   bool _obscureConfirmText = true;
 
@@ -19,43 +21,44 @@ class _SignUpState extends State<SignUpWidget> {
       _obscureText = !_obscureText;
     });
   }
+
   void _toggleConfirm() {
     setState(() {
       _obscureConfirmText = !_obscureConfirmText;
     });
   }
 
-Widget get nameInput => widget.generateFormField(
+  Widget get nameInput => widget.generateFormField(
         theme: ThemeData(),
         keyboardType: TextInputType.emailAddress,
         textInputAction: TextInputAction.next,
         hint: 'Nome Completo',
         enabled: true,
-        // errorText: store.error.username,
-        // onChange: (value) => store.username = value,
+        errorText: store.error.name,
+        onChange: (value) => store.name = value,
       );
 
-Widget get emailInput => widget.generateFormField(
+  Widget get emailInput => widget.generateFormField(
         theme: ThemeData(),
         keyboardType: TextInputType.emailAddress,
         textInputAction: TextInputAction.next,
         hint: 'Seu e-mail',
         enabled: true,
-        // errorText: store.error.username,
-        // onChange: (value) => store.username = value,
+        errorText: store.error.email,
+        onChange: (value) => store.email = value,
       );
 
-Widget get confirmEmailInput => widget.generateFormField(
+  Widget get confirmEmailInput => widget.generateFormField(
         theme: ThemeData(),
         keyboardType: TextInputType.emailAddress,
         textInputAction: TextInputAction.next,
         hint: 'Confirme seu e-mail',
         enabled: true,
-        // errorText: store.error.username,
-        // onChange: (value) => store.username = value,
+        errorText: store.error.confirm_email,
+        onChange: (value) => store.confirm_email = value,
       );
 
-Widget get passwordInput => widget.generateFormField(
+  Widget get passwordInput => widget.generateFormField(
         theme: ThemeData(),
         keyboardType: TextInputType.visiblePassword,
         textInputAction: TextInputAction.next,
@@ -63,11 +66,11 @@ Widget get passwordInput => widget.generateFormField(
         obscureText: _obscureText,
         endIcon: _obscureText ? Icons.visibility : Icons.visibility_off,
         onPressedIcon: _toggle,
-        // errorText: store.error.username,
-        // onChange: (value) => store.username = value,
+        errorText: store.error.password,
+        onChange: (value) => store.password = value,
       );
 
-Widget get confirmPasswordInput => widget.generateFormField(
+  Widget get confirmPasswordInput => widget.generateFormField(
         theme: ThemeData(),
         keyboardType: TextInputType.visiblePassword,
         textInputAction: TextInputAction.next,
@@ -75,11 +78,11 @@ Widget get confirmPasswordInput => widget.generateFormField(
         obscureText: _obscureConfirmText,
         endIcon: _obscureConfirmText ? Icons.visibility : Icons.visibility_off,
         onPressedIcon: _toggleConfirm,
-        // errorText: store.error.username,
-        // onChange: (value) => store.username = value,
+        errorText: store.error.confirm_password,
+        onChange: (value) => store.confirm_password = value,
       );
 
-Widget get signupButton => Container(
+  Widget get signupButton => Container(
         margin: const EdgeInsets.fromLTRB(30, 15, 30, 5),
         width: double.infinity,
         height: 56,
@@ -91,7 +94,7 @@ Widget get signupButton => Container(
               ),
             ),
           ),
-          onPressed: () {},
+          onPressed: store.isLoading ? null : store.signup,
           //FIXME: Adicionar texto do i18n
           child: const Text('Cadastrar'),
         ),
