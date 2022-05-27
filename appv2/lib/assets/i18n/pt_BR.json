@@ -1,0 +1,33 @@
+{
+  "page1-onboarding-title": "Criando um mundo melhor",
+  "page1-onboarding-subtitle": "Com a aider, você pode mudar a vida das pessoas. Nós estamos aqui para te ajudar a encontrá-las",
+  "page2-onboarding-title": "O poder está em suas mãos",
+  "page2-onboarding-subtitle": "Conecte-se com organizações que, assim como você, querem ajudar a construir um mundo melhor",
+  "page3-onboarding-title": "Faça a diferença",
+  "page3-onboarding-subtitle": "Crie sua conta agora, e veja um universo de possibilidades onde sua ajuda faz a diferença.Vamos lá?",
+  "page3-onboarding-button": "Entrar",
+
+  "title-login": "Login",
+  "email-placeholder-login": "E-mail",
+  "password-placeholder-login": "Senha",
+  "reset-password-login": "ESQUECEU A SENHA?",
+  "sign-in-login": "ENTRAR",
+  "divider-text-login": "OU",
+  "sign-up-login": "CRIAR CONTA",
+
+  "title-reset-password": "Redefinir a senha",
+  "label-reset-password": "Insira o seu e-mail para a redefinição da senha",
+  "email-placholder-reset-password": "E-mail",
+  "send-reset-password": "ENVIAR",
+  "return-reset-password": "VOLTAR",
+
+  "title-signup": "Cadastrar",
+  "name-placeholder-signup": "Nome Completo",
+  "email-placeholder-signup": "E-mail",
+  "confirm-email-placeholder-signup": "Confirmar E-mail",
+  "password-placeholder-signup": "Senha",
+  "confirm-password-placeholder-signup": "Confirmar Senha",
+  "button-signup": "CRIAR CONTA",
+  "already-text-signup": "JÁ TEM UMA CONTA?",
+  "return-signup": "FAZER LOGIN"
+}

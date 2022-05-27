@@ -6,11 +6,11 @@ part of 'login_viewmodel.dart';
 // StoreGenerator
 // **************************************************************************
 
-// ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
+// ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, no_leading_underscores_for_local_identifiers
 
-mixin _$LoginViewModel on _LoginViewModelBase, Store {
+mixin _$LoginViewModel on LoginViewModelBase, Store {
   late final _$emailAtom =
-      Atom(name: '_LoginViewModelBase.email', context: context);
+      Atom(name: 'LoginViewModelBase.email', context: context);
 
   @override
   String get email {
@@ -26,7 +26,7 @@ mixin _$LoginViewModel on _LoginViewModelBase, Store {
   }
 
   late final _$passwordAtom =
-      Atom(name: '_LoginViewModelBase.password', context: context);
+      Atom(name: 'LoginViewModelBase.password', context: context);
 
   @override
   String get password {
@@ -42,7 +42,7 @@ mixin _$LoginViewModel on _LoginViewModelBase, Store {
   }
 
   late final _$isLoadingAtom =
-      Atom(name: '_LoginViewModelBase.isLoading', context: context);
+      Atom(name: 'LoginViewModelBase.isLoading', context: context);
 
   @override
   bool get isLoading {
@@ -58,7 +58,7 @@ mixin _$LoginViewModel on _LoginViewModelBase, Store {
   }
 
   late final _$userAtom =
-      Atom(name: '_LoginViewModelBase.user', context: context);
+      Atom(name: 'LoginViewModelBase.user', context: context);
 
   @override
   User? get user {
@@ -73,28 +73,28 @@ mixin _$LoginViewModel on _LoginViewModelBase, Store {
     });
   }
 
-  late final _$_LoginViewModelBaseActionController =
-      ActionController(name: '_LoginViewModelBase', context: context);
+  late final _$LoginViewModelBaseActionController =
+      ActionController(name: 'LoginViewModelBase', context: context);
 
   @override
   void validateemail() {
-    final _$actionInfo = _$_LoginViewModelBaseActionController.startAction(
-        name: '_LoginViewModelBase.validateemail');
+    final _$actionInfo = _$LoginViewModelBaseActionController.startAction(
+        name: 'LoginViewModelBase.validateemail');
     try {
       return super.validateemail();
     } finally {
-      _$_LoginViewModelBaseActionController.endAction(_$actionInfo);
+      _$LoginViewModelBaseActionController.endAction(_$actionInfo);
     }
   }
 
   @override
   void validatePassword() {
-    final _$actionInfo = _$_LoginViewModelBaseActionController.startAction(
-        name: '_LoginViewModelBase.validatePassword');
+    final _$actionInfo = _$LoginViewModelBaseActionController.startAction(
+        name: 'LoginViewModelBase.validatePassword');
     try {
       return super.validatePassword();
     } finally {
-      _$_LoginViewModelBaseActionController.endAction(_$actionInfo);
+      _$LoginViewModelBaseActionController.endAction(_$actionInfo);
     }
   }
 
@@ -109,17 +109,16 @@ user: ${user}
   }
 }
 
-mixin _$LoginError on _LoginErrorBase, Store {
+mixin _$LoginError on LoginErrorBase, Store {
   Computed<bool>? _$hasErrorsComputed;
 
   @override
   bool get hasErrors =>
       (_$hasErrorsComputed ??= Computed<bool>(() => super.hasErrors,
-              name: '_LoginErrorBase.hasErrors'))
+              name: 'LoginErrorBase.hasErrors'))
           .value;
 
-  late final _$emailAtom =
-      Atom(name: '_LoginErrorBase.email', context: context);
+  late final _$emailAtom = Atom(name: 'LoginErrorBase.email', context: context);
 
   @override
   String? get email {
@@ -135,7 +134,7 @@ mixin _$LoginError on _LoginErrorBase, Store {
   }
 
   late final _$passwordAtom =
-      Atom(name: '_LoginErrorBase.password', context: context);
+      Atom(name: 'LoginErrorBase.password', context: context);
 
   @override
   String? get password {
@@ -150,8 +149,7 @@ mixin _$LoginError on _LoginErrorBase, Store {
     });
   }
 
-  late final _$loginAtom =
-      Atom(name: '_LoginErrorBase.login', context: context);
+  late final _$loginAtom = Atom(name: 'LoginErrorBase.login', context: context);
 
   @override
   String? get login {

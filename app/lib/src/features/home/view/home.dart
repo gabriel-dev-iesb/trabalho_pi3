@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class HomePage extends StatefulWidget {
+  final String user;
   const HomePage({Key? key}) : super(key: key);
 
   @override
@@ -24,7 +25,7 @@ class _HomePageState extends ModularState<HomePage, LoginViewModel> {
             ),
           ),
           onPressed: () {
-            print(store);
+            print(widget.user);
           },
           //FIXME: Adicionar texto do i18n
           child: const Text('Test Print store'),

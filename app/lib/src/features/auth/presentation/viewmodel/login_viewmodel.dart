@@ -54,7 +54,7 @@ abstract class _LoginViewModelBase with Store {
 
         updateUser(response);
 
-        Modular.to.pushNamed('/home/');
+        Modular.to.pushNamed('/home/', arguments: {email});
       } on Exception {
         error.login = 'Internal Server Error';
         isLoading = false;
