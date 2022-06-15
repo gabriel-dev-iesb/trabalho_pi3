@@ -18,7 +18,7 @@ class _LoginPageState extends State<LoginPage> {
         visible: store.isLoading,
         child: const Center(
           child: CircularProgressIndicator(
-            backgroundColor: Colors.green,
+            backgroundColor: Color(0xFF0CCE6B),
           ),
         ),
       );
@@ -29,8 +29,8 @@ class _LoginPageState extends State<LoginPage> {
         height: 56,
         child: OutlinedButton(
           style: OutlinedButton.styleFrom(
-            primary: Colors.green,
-            side: const BorderSide(width: 1.0, color: Colors.green),
+            primary: const Color(0xFF0CCE6B),
+            side: const BorderSide(width: 1.0, color: Color(0xFF0CCE6B)),
           ),
           onPressed: () {
             // Modular.to.pushNamed('/auth/signup');
@@ -77,7 +77,7 @@ class _LoginPageState extends State<LoginPage> {
         child: TextButton(
             child: const Text('Esqueci minha senha',
                 style: TextStyle(
-                  color: Colors.green,
+                  color: Color(0xFF0CCE6B),
                   decoration: TextDecoration.underline,
                 )),
             onPressed: () {
@@ -120,7 +120,7 @@ class _LoginPageState extends State<LoginPage> {
                  const Center(
                    child: Text('aider', style: TextStyle(
                      fontSize: 40,
-                     color: Colors.green
+                     color: Color(0xFF0CCE6B)
                    ),),
                  ),
                   const SizedBox(height: 5),
