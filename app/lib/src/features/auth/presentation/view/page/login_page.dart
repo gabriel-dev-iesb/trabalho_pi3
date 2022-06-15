@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:aider/decoration/app_style.dart';
 import 'package:localization/localization.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:localization/localization.dart';
+
 
 class LoginPage extends StatelessWidget {
   final TextEditingController _emailController = TextEditingController();
