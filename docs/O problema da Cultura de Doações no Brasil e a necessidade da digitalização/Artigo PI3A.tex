@@ -1,0 +1,153 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+
+
+\begin{document}
+
+\title{O problema da Cultura de Doações no Brasil e a necessidade da digitalização\\
+}
+
+\author{\IEEEauthorblockN{1\textsuperscript{st} Gabriel Silva de Castro}
+\IEEEauthorblockA{\textit{Campus Sul Edson Machado} \\
+\textit{Instituto de Educação Superior de Brasília}\\
+Brasília, Brasil \\
+gabrielcastrog2@gmail.com}
+\and
+\IEEEauthorblockN{2\textsuperscript{nd} Guilherme Araújo de Castro}
+\IEEEauthorblockA{\textit{Campus Sul Edson Machado} \\
+\textit{Instituto de Educação Superior de Brasília}\\
+Brasília, Brasil \\
+guilhermearaujo3112@gmail.com}
+}
+
+\maketitle
+
+\begin{abstract}
+Instituições não governamentais pertencentes ao Terceiro Setor brasileiro vêm sofrendo com a redução de doações nos últimos anos, principalmente devido a recente pandemia global, onde provocou aumento significativo nos níveis de pobreza. Esse acontecimento ocasionou aumento da necessidade de doações direcionadas a ONGs. Entretanto, no cenário atual de distanciamento das instituições com a população brasileira, o alcance de ONGs vem diminuindo cada vez mais. Nesse aspecto, a tecnologia pode ser de grande ajuda as instituições não governamentais, tanto para propor relação mais próxima com doadores ou possíveis doadores, quanto para aumentar a organização de instituições e seus projetos sociais. Diante disso, este trabalho tem como objetivo se aliar a tecnologia para desenvolver uma solução que aumente o alcance de ONGs e as conecte com doadores e interessados em se tornar doadores. Para isso, será construído um aplicativo que utiliza Sistema de Recomendação e recomenda ONGs similares ao perfil de interesse do usuário.
+\end{abstract}
+
+\begin{IEEEkeywords}
+ONGs, Terceiro Setor, cultura de doações, Sistema de Recomendação e causas sociais.
+\end{IEEEkeywords}
+
+\section{Introdução}
+	O empobrecimento da população se tornou um problema ainda maior nos últimos anos, a sociedade sofreu mudanças drásticas ao enfrentar uma pandemia global, sobretudo na parcela mais pobre da população, que consequentemente gerou mais pessoas em situação de rua (SILVA, 2020). Segundo a pesquisa feita pela Rede Penssan (Rede Brasileira de Pesquisa em Soberania e Segurança Alimentar e Nutricional) em 2021, a fome atingiu 9\% da população brasileira, totalizando 19,1 milhões de pessoas com fome em 2020. Diante de situações graves como uma crise humanitária, o Terceiro Setor é fundamental para auxiliar pessoas carentes e em situação de rua.
+
+No Terceiro Setor existem organizações capacitadas para auxiliar a população em diversas causas, como combate à fome e à pobreza, crianças carentes, causas ambientais e pessoas em situação de rua. Porém, organizações sem fins lucrativos necessitam de recursos para cumprir seus objetivos, recursos estes que são arrecadados em doações. Depender de doações é um problema que faz com que ONGs não tenham estabilidade financeira para suprir necessidades de forma recorrente. 
+
+A cultura de doações no Brasil ainda é fortemente influenciada por questões políticas e sociais, segundo o Brazil Giving Report, realizada pela CAF (Charities Aid Foundation), grande parte de doações são direcionadas a causas religiosas com cerca de quase metade das doações (49\%). Outras causas como apoio a crianças e jovens (39\%) e combate à pobreza (30\%) são também incluídas na lista, mas com porcentagens menores. 
+
+No Brasil, apesar da grande desigualdade social e do empobrecimento da população, pesquisas mostram que existe uma parcela da população que deseja contribuir com doações, mas não sabe como ou tem dúvidas na procura de uma organização. 
+
+Além da falta de proximidade de ONGs com o povo brasileiro, existe uma certa desconfiança de uma parcela da população com o uso do dinheiro doado. As perspectivas de não doadores em relação a instituições não governamentais foram pesquisadas por Micheli Umebayashi (2018), e em sua pesquisa doze entre quinze entrevistados declaram ter percepção negativa das ONGs no Brasil, indicando mau uso do dinheiro ou corrupção e lavagem de dinheiro. Ainda em sua pesquisa, a autora descreve que a relação entre doadores e ONGs começa com a presença de estímulos internos ou externos que marcam a vida de um indivíduo e o influencia a procurar e doar para causas sociais. \cite{umebayashi2018doaccoes}
+
+Os tópicos 3 e 4 desse artigo apresentam a contextualização atual sobre a cultura de doações no Brasil e apresenta um problema referente a falta de doações para ONGs e instituições sociais. Os tópicos 5 e 6 expõe os objetivos deste trabalho. O tópico 7 descreve os materiais do referencial teórico usado no artigo, bem como no tópico 8 onde é descrito sobre artigos usados para fundamentação do trabalho.  O tópico 9 descreve a metodologia utilizada, e os tópicos 10 e 11 fazem a descrição dos resultados obtidos e da conclusão final.
+
+
+\section{Contextualização}
+O Brasil é um país em que a cultura de doações não é bem divulgada e nem incentivada. Segundo o World Giving Index (WGI), o Brasil é o 54º país mais generoso do mundo. No início esse dado é um pouco estranho, pois quando se pensa em Brasil, imagina-se um povo solidário, e de fato grande parcela da população brasileira deseja realizar doações, entretanto, não tem informação de onde e como encontrar ONGs e nem tempo suficiente para se disponibilizar em trabalhos voluntários. \cite{sitepolitize01}
+
+A sensibilização cresce diante de momentos de crise humanitária, principalmente em que o quadro de pobreza e fome aumenta consideravelmente, e em situações como essa é uma ótima oportunidade para a cultura de doação crescer e se conectar com a população.  A doação é um ato voluntário, é interesse do próprio doador de ajudar as causas sociais. Entretanto, o interesse do doador na maioria das vezes não vem do nada, é de muita importância que as instituições do Terceiro Setor contribuam com marketing no propósito de incentivar a doação.
+
+\subsection{A urgência das instituições}
+
+As necessidades das instituições do Terceiro Setor sempre são urgentes, pois são instituições que atuam para o desenvolvimento social. No entanto, o alcance dessas instituições é limitado, criando barreiras na busca de doações e voluntários.\cite{sitecodebit} Na busca de maneiras para quebrar as barreiras da difícil aproximação entre instituições não governamentais e possíveis doares, a modernização e digitalização das ONGs pode ser a solução de diversos problemas. \cite{roche2000avaliaccao}
+
+A tecnologia está presente na vida da maior da parte da população, e a tecnologia pode ser uma grande aliada do terceiro setor brasileiro no objetivo de ampliar as fontes de recursos e doações das organizações. A digitalização das instituições tem o poder de transformar o Terceiro Setor, utilizar tecnologia como intermediária para doações e divulgação de projetos sociais pode agilizar a administração de recursos e organizar a divulgação das mais diversas causas sociais.  
+
+
+\subsection{Digitalização das Instituições}
+As mídias sociais, ou os canais de comunicação em geral, são de extrema importância para o mundo globalizado. É uma forma de interação entre usuários, em que é possível criar exposição e relações rápidas. É inegável que empresas que usam mídias sociais como forma de divulgação tem relacionamento mais próximos com usuários e geram mais exposição. Por isso, o marketing nas redes sociais se tornou uma das principais ferramentas para empresas.
+
+O conceito de marketing comercial, bastante utilizado por empresas comerciais, pode ser utilizado para impulsionar doações de instituições do Terceiro Setor. A divulgação de causas e projetos sociais em redes sociais, aliado a utilização de ferramentas corretas, causa exposição e promoção nas redes. Além disso, mídias sociais são ferramentas capazes de transmitir sentimento de transparência com o público, entregando informações sobre a utilização do recurso doado para o doador. 
+
+De acordo com Yago Silva (2020), o Terceiro Setor enfrenta muitos problemas em relação ao Marketing Social presente nas organizações. Em seu estudo, foi identificado que as entidades sociais não possuem profissionais especializados em marketing, comprometendo a aquisição de novas doações para as instituições. Além disso, estudos anteriores comprovam que profissionais de diversos setores são necessários para manutenção das instituições no Terceiro Setor. \cite{silva2020dificuldades} 
+
+Em sua pesquisa sobre “Marketing Social para doação de sangue”, Stephanie Barboza identifica que “o marketing social apresenta um modelo de ação que pode elevar a eficiência na promoção da mudança social, ao propor a geração de novos hábitos por meio de uma ideia ofertada”. Pela sua observação, o marketing social acerca de doações é um meio que leva a população a perceber que o comportamento voluntário de doar e, consequentemente, sua mudança social gerada, promove um bem-estar dos indivíduos. E, através desse bem-estar gerado, o indivíduo volta a buscar doações novamente. \cite{barboza2014marketing} \cite{cerosino2022impactos}
+
+A partir da digitalização, as instituições são capazes de divulgar seus projetos sociais em amplas plataformas, e até mesmo, encontrar e engajar novos públicos que não são familiarizados com a cultura de doação. Em recente pesquisa coordenada pelo Instituto para o Desenvolvimento Social, em sua segunda edição da Pesquisa Doação Brasil, 83\% dos doares acham que doar faz diferença, mas apenas 37\% doam dinheiro para ONGs. É de extrema importância para ONGs que esse dado cresça e que a cultura da doação seja propagada.
+
+ 
+\section{Problema}
+A dificuldade de acesso à informação sobre campanhas de doação e incentivo a solidariedade é um grande problema para ONGs, possíveis doadores podem encontrar dificuldades em achar uma instituição que esteja alinhada aos seus interesses, devido a grande quantidade de ONGs e projetos existentes.  Algumas causas sociais chamam mais atenção da população como crianças carentes e combate à pobreza, porém, outras causas como questões ambientais e luta por direitos humanos passam despercebidas. Isso ocorre por não serem causas amplamente divulgadas e visíveis no cotidiano, o indivíduo se sensibiliza mais pelo que é visto. 
+
+No Brasil, apesar da grande desigualdade social, da fome e pobreza da população, quase metade das doações são destinadas a causas religiosas. Cerca de 86,6\% da população brasileira é cristã, segundo o IBGE. Ao analisar esses dois dados, é evidente que a cultura de doações no Brasil ainda é fortemente influenciada por fatores sociais. 
+
+Cada ONG possui uma ou várias causas, cada causa tem seu objetivo e cumpre um papel social importantíssimo. Procurar e achar organizações que promovem causas sociais específicas pode ser trabalhoso, além disso, acompanhar suas ações sociais consome tempo, e a falta de tempo livre é um dos fatores que impede brasileiros de engajar em causas sociais. Falta de mobilidade para trabalhos voluntários em ONGs também é um dos motivos para o desinteresse na cultura da doação. \cite{goff2020identifying}
+
+A desinformação somada a falta de tempo gera ainda mais desinteresse da população na cultura de doações. Pensando nesse cenário com diversos problemas, como a tecnologia pode ser uma aliada das ONGs e ajudar no desenvolvimento da cultura da doação?
+
+\section{Objetivo Geral}
+Este trabalho tem como objetivo desenvolver um aplicativo para promover a facilidade em doações a ONGs, e através do uso de Sistema de Recomendação, sugerir instituições similares que necessitam de doações de acordo com o perfil do usuário.
+
+
+\section{Objetivos Específicos}
+\begin{itemize}
+\item Facilitar o acesso a doações para ONGs para que se torne uma atividade simples e que não consuma tempo;
+\item Utilizar celulares como intermediador entre ONGs e doadores;
+\item Incentivar a cultura de doações;
+\item Aumentar o interesse em diferentes causas sociais, principalmente causas invisibilizadas.
+\end{itemize}
+
+
+
+\section{Referencial Teórico}
+\subsection{Terceiro Setor: seus objetivos e dificuldades}
+A definição do Terceiro Setor vem de instituições que não são do setor do Estado e nem do setor privado, são organizações formadas sem fins lucrativos e para prestar serviços públicos. \cite{sitepolitize02} 
+
+A existência do Terceiro Setor é baseada na sua capacidade de atender demandas sociais que o Estado não consegue suprir. As instituições não governamentais vêm tentando agir através do auxílio às pessoas carentes. Contudo, o Terceiro Setor enfrenta dificuldades, principalmente após um cenário pós-pandemia. \cite{silva2020dificuldades}
+
+A deficiência de recursos das ONGs é um dos principais problemas. A falta de planejamento por parte de ONGs, aliada ao desinteresse da população na cultura de doação, constituiu grande falta recursos nos últimos anos. Cerca de 41\% das instituições carecem de apoiadores financeiros, 13\% de doação material como alimentos e equipamentos e 11\% das instituições precisam de voluntários. (Datafolha, 2020)
+
+\subsection{A digitalização de ONGs}
+Com o mundo expandindo para o digital, as ONGs e instituições sociais precisam realizar mudanças no arrecadamento de doações e comunicação com os doadores. A tecnologia deve ser utilizada como aliada na cultura da doação. 
+
+Diante dos variados problemas nos últimos anos, principalmente durante a pandemia do Coronavírus, diversas ONGs se viram obrigadas a procurar meios na tecnologia para administrar seus meios de arrecadação de recursos. Segundo um Estado feito pelo Fórum Econômico Mundial em 2021, organizações que se reinventaram digitalmente conseguem se relacionar com o público mais profundamente. \cite{siteimpacto} \cite{economicforum}
+
+Juliana Laval, ao realizar uma pesquisa sobre marketing social na necessidade de doação de sangue, expõe que o marketing tem sido aplicado em organizações do terceiro setor, visando tornar as campanhas sociais mais efetivas. A transferência do conceito de marketing de organizações lucrativas para organizações que não possuem finalidade de lucro representa aplicações de inclusão da sociedade com foco na mudança voluntária de comportamento. \cite{laval2007comportamento}
+
+
+\section{Trabalhos Correlatos}
+
+No estudo sobre Sistemas de Recomendação, foram identificados exemplos de comparação na comunidade científica, comparando-a com uma rede social, devido as relações encontradas nela, como coautoria, colaboração em projetos, orientações, dentre outros. Por conta da dificuldade que alguns pesquisadores enfrentam ao buscar novos artigos para estudo, o autor propõe um sistema de recomendação de artigos, utilizando informações sociais e bibliométricas, comparando os algoritmos propostos pelo projeto com algoritmos já consolidados na área de sistemas de recomendação, e com algoritmos encontrados em trabalhos correlatos.  \cite{grava2021sistema}
+
+Os Sistemas de Recomendações são mecanismos que oferecem técnicas para fornecer sugestões de itens ao usuário. São capazes de sugerir desde músicas, vídeos e até produtos. Neste trabalho, será usado Sistema de Recomendação para sugestão de ONGs com causas sociais que tenha objetivos em comum com interesses do usuário. A técnica utilizada será a recomendação baseada em conteúdo. Sistemas de recomendação baseada em conteúdo recomendam itens levando em consideração a descrição do item e o perfil do usuário \cite{sharma2013survey}. Tipicamente, o perfil de usuário é criado automaticamente se baseando no que é consumido, entretanto, neste projeto o perfil será criado a partir do que o usuário decidir como descrição de interesse. Além da recomendação baseada em conteúdo, existem outras duas técnicas de recomendação. 
+
+A primeira técnica é a recomendação com filtragem colaborativa, nela a semelhança de itens é medida pelo feedback do usuário, geralmente por meio de avaliações. A relação entre opiniões de diferentes usuários é explorada, assumindo que usuários com avaliações similares terão o mesmo gosto no futuro. \cite{sharma2013survey}
+
+A terceira e última técnica é o processo híbrido, combinando outras duas técnicas e reduzindo suas desvantagens. Entretanto, o resultado da técnica hibrida depende do domínio e dos dados. \cite{ccano2017hybrid}
+
+Os algoritmos implementados foram executados a partir de conjuntos de treinamento utilizando diferentes configurações de entrada. Algoritmos de recomendação vão além da precisão das previsões e sua utilização para avaliar sistemas de recomendação em conteúdo textual e filtragem colaborativa. 
+
+Além disso, estudos e artigos recentes mostram que pessoas tendem a confiar mais em conteúdos que são consumidos e originados de pessoas que elas conhecem, especialmente pessoas próximas. Esse comportamento criou a técnica Social Based Recommendations. \cite{grava2021sistema}
+
+Por fim, é proposto um modelo de recomendação baseado nas abordagens clássicas da teoria de recomendação, como a filtragem colaborativa, adicionando informações contextuais do usuário, para não só limitar as recomendações, mas também incorporar em um sistema de informações as informações do usuário. \cite{avancini2016sistema}
+
+
+\section{Metodologia}
+
+Este trabalho tem por objetivo iniciar uma pesquisa sobre a Cultura de Doação no Brasil, por meio de uma pesquisa exploratória, buscando entender seu funcionamento, a visão da população a respeito de ONGs e a divulgação da necessidade de doações. Busca-se também explorar e entender os motivos da falta de doações. Esta pesquisa pode-se categorizar como uma pesquisa qualitativa, visto que a estratégia escolhida de pesquisa se baseou na análise do material teórico.
+
+O estudo foi feito a partir de artigos científicos e jornalísticos acerca de temas que envolvem a cultura da doação e instituições sociais. Os artigos foram encontrados em mecanismos de busca como Google Acadêmico e IEEE Xplore. Os artigos utilizados para estudo foram coletados usando palavras-chave como “Terceiro Setor”, “ONGs”, “Instituições Sociais” e “Cultura de Doações”. Foram também consultadas pesquisas como “Censo de Religião” feita pelo IBGE e “Pesquisa de Doação no Brasil” feita pelo Instituto para o Desenvolvimento Social.
+
+
+\section{Conclusão}
+Este estudo permitiu analisar que ONGs e instituições sociais no geral necessitam da digitalização do Terceiro Setor. A tecnologia permite contribuir com engajamento e melhorar a percepção do doador quanto a instituição. 
+
+A tecnologia oferece a ferramenta para expandir o alcance de instituições para além de doadores frequentes, permite que as instituições trabalhem para alcançar públicos que não tem contato com a cultura de doação. É importante também para as instituições ter transparência e proximidade com doadores, pois instituições que mostram resultados geram mais confiança. 
+
+A responsabilidade social que ONGs e instituições sociais tem é enorme, pois desempenham um papel importantíssimo no contexto social do Brasil. A instituições precisam utilizar de todas as ferramentas disponíveis para continuarem realizando sua contribuição social.
+
+
+\section{Bibliografia}
+\bibliographystyle{ieeetr}
+\bibliography{Bibliografia}
+
+
+\end{document}
