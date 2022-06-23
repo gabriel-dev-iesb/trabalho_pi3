@@ -19,7 +19,7 @@ ThemeData basicTheme() {
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        primary: Colors.green,
+        primary: Colors.black87
       )
     ),
     

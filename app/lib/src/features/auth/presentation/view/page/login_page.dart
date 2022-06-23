@@ -17,8 +17,17 @@ class LoginPage extends StatelessWidget {
       body: _containerBody(),
       appBar: AppBar(
         title: Text("title-login".i18n(), style: const TextStyle(fontSize: 20)),
+        centerTitle: true,
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(
+              IconData(0xe743, fontFamily: 'MaterialIcons'),
+              color: Colors.white,
+            ),
+            onPressed: () {},
+          )
+        ],
       ),
-      
     );
   }
 
@@ -31,6 +40,15 @@ class LoginPage extends StatelessWidget {
             padding: const EdgeInsets.only(top: 30, bottom: 35),
             child: Image.asset('lib/assets/images/Logo.png'),
           ),
+          const Padding(
+            padding: EdgeInsets.only(left: 15, bottom: 20, right: 20, top: 0),
+            child: Text(
+              'Ajude o mundo a se tornar um lugar melhor!',
+              textAlign: TextAlign.center,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+          ),
           TextFormField(
               controller: _emailController,
               keyboardType: TextInputType.emailAddress,
@@ -38,9 +56,15 @@ class LoginPage extends StatelessWidget {
                 fontSize: 18,
               ),
               decoration: AppStyle.textFieldDecoration(
-                  labelText: "email-placeholder-login".i18n())),
+                labelText: "email-placeholder-login".i18n(),
+                hintText: "example@email.com",
+                prefixIcon:const Icon(Icons.email),
+              ),
+              
+              
+              ),
           Container(
-            margin: const EdgeInsets.only(top: 40),
+            margin: const EdgeInsets.only(top: 20),
             child: TextFormField(
                 controller: _passwordController,
                 obscureText: true,
@@ -48,12 +72,14 @@ class LoginPage extends StatelessWidget {
                   fontSize: 18,
                 ),
                 decoration: AppStyle.textFieldDecoration(
-                    labelText: "password-placeholder-login".i18n())),
+                    labelText: "password-placeholder-login".i18n(),
+                    hintText: "Sua senha",
+                    prefixIcon:const Icon(Icons.lock))),
           ),
           Container(
             margin: const EdgeInsets.only(top: 35),
             height: 50,
-            padding: const EdgeInsets.only(left: 110, right: 110),
+            //padding: const EdgeInsets.only(left: 110, right: 110),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 textStyle: const TextStyle(
@@ -69,7 +95,7 @@ class LoginPage extends StatelessWidget {
             ),
           ),
           Container(
-            margin: const EdgeInsets.only(bottom: 15),
+            margin: const EdgeInsets.only(bottom: 5),
             padding: const EdgeInsets.only(top: 20),
             child: GestureDetector(
                 child: RichText(
@@ -89,9 +115,9 @@ class LoginPage extends StatelessWidget {
           ),
           _footer(),
           Container(
-            margin: const EdgeInsets.only(top: 20),
+            margin: const EdgeInsets.only(top: 5),
             height: 50,
-            padding: const EdgeInsets.only(left: 110, right: 110),
+            //padding: const EdgeInsets.only(left: 110, right: 110),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 textStyle: const TextStyle(
@@ -119,17 +145,21 @@ class LoginPage extends StatelessWidget {
           child: Container(
             margin: const EdgeInsets.only(right: 10),
             child: const Divider(
-              height: 26,
+              color: Colors.black,
+              height: 18,
             ),
           ),
         ),
         spacing(48),
-        Text("divider-text-login".i18n(), style: const TextStyle(color: Color(0xFF0CCE6B))),
+        Text("divider-text-login".i18n(),
+            style: const TextStyle(
+                color: Colors.black, fontWeight: FontWeight.bold)),
         Expanded(
           child: Container(
             margin: const EdgeInsets.only(left: 10),
             child: const Divider(
-              height: 26,
+              color: Colors.black,
+              height: 18,
             ),
           ),
         ),

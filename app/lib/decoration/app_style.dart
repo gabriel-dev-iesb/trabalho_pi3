@@ -2,22 +2,19 @@ import 'package:flutter/material.dart';
 
 
 class AppStyle {
-  static InputDecoration textFieldDecoration({String labelText = " ", String hintText = " "}){
+  static InputDecoration textFieldDecoration({String labelText = " ", String hintText = " ", var prefixIcon }){
 
     return InputDecoration(
       labelText: labelText,
+      prefixIcon: prefixIcon,
       focusColor: const Color(0xFF0CCE6B),
       filled: true,
-      fillColor: Colors.white,
+      fillColor: Colors.black12,
       hintText: hintText,
-      floatingLabelStyle: const TextStyle(color: Color(0xFF0CCE6B)),
-      hintStyle: TextStyle(color: Colors.grey[400], fontSize: 16),
-      enabledBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: Colors.grey.shade300),
-      ),
-      focusedBorder: const OutlineInputBorder(
-        borderSide: BorderSide(color: Color(0xFF0CCE6B)),
-      ),
+      border: InputBorder.none,
+      floatingLabelStyle: const TextStyle(color: Colors.black, fontWeight:FontWeight.bold ),
+      hintStyle: TextStyle(color: Colors.grey[700], fontSize: 16),
+      
     );
   }
 }

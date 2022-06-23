@@ -3,7 +3,6 @@ import 'package:aider/decoration/app_style.dart';
 import 'package:localization/localization.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-
 class ResetPasswordPage extends StatelessWidget {
   final TextEditingController _emailResetController = TextEditingController();
 
@@ -15,7 +14,20 @@ class ResetPasswordPage extends StatelessWidget {
       backgroundColor: Colors.white,
       body: _containerBody(),
       appBar: AppBar(
-        title:  Text("title-reset-password".i18n(), style: const TextStyle(fontSize: 20)),
+        title: Text("title-reset-password".i18n(),
+            style: const TextStyle(fontSize: 20)),
+        centerTitle: true,
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(
+              IconData(0xe743, fontFamily: 'MaterialIcons'),
+              color: Colors.white,
+            ),
+            onPressed: () {
+              // do something
+            },
+          )
+        ],
       ),
     );
   }
@@ -35,7 +47,7 @@ class ResetPasswordPage extends StatelessWidget {
             child: Text(
               "label-reset-password".i18n(),
               style: const TextStyle(
-                fontSize:17,
+                fontSize: 17,
               ),
               textAlign: TextAlign.center,
             ),
@@ -47,13 +59,12 @@ class ResetPasswordPage extends StatelessWidget {
                 fontSize: 18,
               ),
               decoration: AppStyle.textFieldDecoration(
-                  labelText: "email-placholder-reset-password".i18n(),
-                  )),
-          
+                labelText: "email-placholder-reset-password".i18n(),
+              )),
           Container(
             margin: const EdgeInsets.only(top: 35),
             height: 50,
-            padding: const EdgeInsets.only(left: 110, right: 110),
+            //padding: const EdgeInsets.only(left: 110, right: 110),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 textStyle: const TextStyle(
@@ -61,12 +72,10 @@ class ResetPasswordPage extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              child:  Text('send-reset-password'.i18n()),
-              onPressed: () {
-              },
+              child: Text('send-reset-password'.i18n()),
+              onPressed: () {},
             ),
           ),
-
           Container(
             margin: const EdgeInsets.only(bottom: 15),
             padding: const EdgeInsets.only(top: 50),
@@ -88,7 +97,6 @@ class ResetPasswordPage extends StatelessWidget {
                   Modular.to.pushNamed('/auth/login');
                 }),
           ),
-
         ],
       ),
     );

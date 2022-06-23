@@ -19,6 +19,18 @@ class RegisterPage extends StatelessWidget {
       body: _containerBody(),
       appBar: AppBar(
         title: Text("title-signup".i18n(), style: const TextStyle(fontSize: 20)),
+        centerTitle: true,
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(
+              IconData(0xe743, fontFamily: 'MaterialIcons'),
+              color: Colors.white,
+            ),
+            onPressed: () {
+              // do something
+            },
+          )
+        ],
       ),
     );
   }
@@ -88,7 +100,7 @@ class RegisterPage extends StatelessWidget {
           Container(
             margin: const EdgeInsets.only(top: 35),
             height: 50,
-            padding: const EdgeInsets.only(left: 110, right: 110),
+            //padding: const EdgeInsets.only(left: 110, right: 110),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 textStyle: const TextStyle(
