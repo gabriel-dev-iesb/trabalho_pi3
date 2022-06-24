@@ -9,22 +9,22 @@ ThemeData basicTheme() {
 
   return base.copyWith(
     textTheme: _basicTextTheme(base.textTheme),
-    primaryColor: Colors.green,
+    primaryColor: Colors.greenAccent,
     iconTheme: const IconThemeData(
       color: Colors.white,
     ),
-    
-    appBarTheme:base.appBarTheme.copyWith(
-      color: Colors.black87,
-      
-
+    appBarTheme: base.appBarTheme.copyWith(
+      color: Colors.green,
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(
-        primary: Colors.black87
-      )
-    ),
-    
+        style: ElevatedButton.styleFrom(
+      primary: Colors.black87,
+      onPrimary: Colors.white,
+      shadowColor: Colors.limeAccent,
+      elevation: 8,
+      padding: EdgeInsets.zero,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+    )),
   );
 }
 
