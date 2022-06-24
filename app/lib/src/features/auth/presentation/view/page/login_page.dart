@@ -4,7 +4,6 @@ import 'package:aider/decoration/app_style.dart';
 import 'package:localization/localization.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-
 class LoginPage extends StatelessWidget {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -13,11 +12,14 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
+      
       body: _containerBody(),
       appBar: AppBar(
         title: Text("title-login".i18n(), style: const TextStyle(fontSize: 20)),
         centerTitle: true,
+        
         actions: <Widget>[
           IconButton(
             icon: const Icon(
@@ -34,37 +36,45 @@ class LoginPage extends StatelessWidget {
   _containerBody() {
     return Container(
       padding: const EdgeInsets.all(30),
+      decoration: const BoxDecoration(
+          gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [Colors.white, Color.fromARGB(255, 204, 241, 205)])),
       child: ListView(
         children: [
           Container(
-            padding: const EdgeInsets.only(top: 30, bottom: 35),
+            padding: const EdgeInsets.only(top: 10, bottom: 35),
             child: Image.asset('lib/assets/images/Logo.png'),
           ),
           const Padding(
             padding: EdgeInsets.only(left: 15, bottom: 20, right: 20, top: 0),
             child: Text(
-              'Ajude o mundo a se tornar um lugar melhor!',
+              'Torne o mundo um lugar melhor!',
               textAlign: TextAlign.center,
               overflow: TextOverflow.ellipsis,
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 19,
+                ),
             ),
+            
           ),
           TextFormField(
-              controller: _emailController,
-              keyboardType: TextInputType.emailAddress,
-              style: const TextStyle(
-                fontSize: 18,
-              ),
-              decoration: AppStyle.textFieldDecoration(
-                labelText: "email-placeholder-login".i18n(),
-                hintText: "example@email.com",
-                prefixIcon:const Icon(Icons.email),
-              ),
-              
-              
-              ),
+            controller: _emailController,
+            keyboardType: TextInputType.emailAddress,
+            style: const TextStyle(
+              fontSize: 18,
+            ),
+            decoration: AppStyle.textFieldDecoration(
+              labelText: "email-placeholder-login".i18n(),
+              hintText: "example@email.com",
+              prefixIcon:
+                  const Icon(Icons.email, size: 18.0, color: Colors.black45),
+            ),
+          ),
           Container(
-            margin: const EdgeInsets.only(top: 20),
+            margin: const EdgeInsets.only(top: 15),
             child: TextFormField(
                 controller: _passwordController,
                 obscureText: true,
@@ -74,10 +84,15 @@ class LoginPage extends StatelessWidget {
                 decoration: AppStyle.textFieldDecoration(
                     labelText: "password-placeholder-login".i18n(),
                     hintText: "Sua senha",
-                    prefixIcon:const Icon(Icons.lock))),
+                    prefixIcon: const Icon(Icons.lock,
+                        size: 18.0, color: Colors.black45),
+                    suffixIcon: const Icon(Icons.visibility,
+                        size: 18.0, color: Colors.black45),
+                        
+                    )),
           ),
           Container(
-            margin: const EdgeInsets.only(top: 35),
+            margin: const EdgeInsets.only(top: 15),
             height: 50,
             //padding: const EdgeInsets.only(left: 110, right: 110),
             child: ElevatedButton(
@@ -95,8 +110,8 @@ class LoginPage extends StatelessWidget {
             ),
           ),
           Container(
-            margin: const EdgeInsets.only(bottom: 5),
-            padding: const EdgeInsets.only(top: 20),
+            margin: const EdgeInsets.only(bottom: 0),
+            padding: const EdgeInsets.only(top: 14),
             child: GestureDetector(
                 child: RichText(
                   textAlign: TextAlign.center,
@@ -115,7 +130,7 @@ class LoginPage extends StatelessWidget {
           ),
           _footer(),
           Container(
-            margin: const EdgeInsets.only(top: 5),
+            margin: const EdgeInsets.only(top: 10),
             height: 50,
             //padding: const EdgeInsets.only(left: 110, right: 110),
             child: ElevatedButton(

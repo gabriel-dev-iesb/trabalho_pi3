@@ -13,8 +13,10 @@ ThemeData basicTheme() {
     iconTheme: const IconThemeData(
       color: Colors.white,
     ),
+    
     appBarTheme:base.appBarTheme.copyWith(
-      color: Colors.green,
+      color: Colors.black87,
+      
 
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(

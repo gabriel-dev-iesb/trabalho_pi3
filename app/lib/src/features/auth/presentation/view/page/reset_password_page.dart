@@ -35,6 +35,11 @@ class ResetPasswordPage extends StatelessWidget {
   _containerBody() {
     return Container(
       padding: const EdgeInsets.all(30),
+      decoration: const BoxDecoration(
+          gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [Colors.white, Color.fromARGB(255, 204, 241, 205)])),
       child: ListView(
         children: [
           Container(

@@ -3,12 +3,13 @@ import 'package:aider/decoration/app_style.dart';
 import 'package:localization/localization.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-
 class RegisterPage extends StatelessWidget {
   final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _confirmationEmailController = TextEditingController();
+  final TextEditingController _confirmationEmailController =
+      TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _confirmationPasswordController = TextEditingController();
+  final TextEditingController _confirmationPasswordController =
+      TextEditingController();
   final TextEditingController _nameController = TextEditingController();
 
   RegisterPage({Key? key}) : super(key: key);
@@ -18,7 +19,8 @@ class RegisterPage extends StatelessWidget {
     return Scaffold(
       body: _containerBody(),
       appBar: AppBar(
-        title: Text("title-signup".i18n(), style: const TextStyle(fontSize: 20)),
+        title:
+            Text("title-signup".i18n(), style: const TextStyle(fontSize: 20)),
         centerTitle: true,
         actions: <Widget>[
           IconButton(
@@ -38,11 +40,24 @@ class RegisterPage extends StatelessWidget {
   _containerBody() {
     return Container(
       padding: const EdgeInsets.all(30),
+      decoration: const BoxDecoration(
+          gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [Colors.white, Color.fromARGB(255, 204, 241, 205)])),
       child: ListView(
         children: [
-          Container(
-            padding: const EdgeInsets.only(top: 0, bottom: 10),
-            child: Image.asset('lib/assets/images/Logo.png'),
+          const Padding(
+            padding: EdgeInsets.only(left: 15, bottom: 20, right: 20, top: 0),
+            child: Text(
+              'Insira suas informações abaixo',
+              textAlign: TextAlign.center,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 19,
+              ),
+            ),
           ),
           TextFormField(
               controller: _nameController,
@@ -51,7 +66,10 @@ class RegisterPage extends StatelessWidget {
                 fontSize: 18,
               ),
               decoration: AppStyle.textFieldDecoration(
-                  labelText: "name-placeholder-signup".i18n())),
+                labelText: "name-placeholder-signup".i18n(),
+                prefixIcon: const Icon(Icons.account_circle,
+                    size: 18.0, color: Colors.black45),
+              )),
           Container(
             margin: const EdgeInsets.only(top: 10),
             child: TextFormField(
@@ -61,7 +79,10 @@ class RegisterPage extends StatelessWidget {
                   fontSize: 18,
                 ),
                 decoration: AppStyle.textFieldDecoration(
-                    labelText: "email-placeholder-signup".i18n())),
+                  labelText: "email-placeholder-signup".i18n(),
+                  prefixIcon: const Icon(Icons.email,
+                      size: 18.0, color: Colors.black45),
+                )),
           ),
           Container(
             margin: const EdgeInsets.only(top: 10),
@@ -72,7 +93,10 @@ class RegisterPage extends StatelessWidget {
                   fontSize: 18,
                 ),
                 decoration: AppStyle.textFieldDecoration(
-                    labelText: "confirm-email-placeholder-signup".i18n())),
+                  labelText: "confirm-email-placeholder-signup".i18n(),
+                  prefixIcon: const Icon(Icons.email,
+                      size: 18.0, color: Colors.black45),
+                )),
           ),
           Container(
             margin: const EdgeInsets.only(top: 10),
@@ -83,8 +107,10 @@ class RegisterPage extends StatelessWidget {
                   fontSize: 18,
                 ),
                 decoration: AppStyle.textFieldDecoration(
-                    labelText: "password-placeholder-signup".i18n()
-                    )),
+                  labelText: "password-placeholder-signup".i18n(),
+                  prefixIcon:
+                      const Icon(Icons.lock, size: 18.0, color: Colors.black45),
+                )),
           ),
           Container(
             margin: const EdgeInsets.only(top: 10),
@@ -95,10 +121,13 @@ class RegisterPage extends StatelessWidget {
                   fontSize: 18,
                 ),
                 decoration: AppStyle.textFieldDecoration(
-                    labelText: "confirm-password-placeholder-signup".i18n())),
+                  labelText: "confirm-password-placeholder-signup".i18n(),
+                  prefixIcon:
+                      const Icon(Icons.lock, size: 18.0, color: Colors.black45),
+                )),
           ),
           Container(
-            margin: const EdgeInsets.only(top: 35),
+            margin: const EdgeInsets.only(top: 15),
             height: 50,
             //padding: const EdgeInsets.only(left: 110, right: 110),
             child: ElevatedButton(
@@ -116,14 +145,13 @@ class RegisterPage extends StatelessWidget {
             ),
           ),
           Container(
-            margin: const EdgeInsets.only(top: 50),
-            child:  Text(
+            margin: const EdgeInsets.only(top: 15),
+            child: Text(
               "already-text-signup".i18n(),
               style: const TextStyle(
                 fontSize: 15,
                 decorationStyle: TextDecorationStyle.wavy,
                 fontWeight: FontWeight.bold,
-
               ),
               textAlign: TextAlign.center,
             ),
